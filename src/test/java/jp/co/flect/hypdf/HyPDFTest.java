@@ -1,27 +1,26 @@
 package jp.co.flect.hypdf;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Map;
+import java.util.Properties;
+
+import jp.co.flect.hypdf.model.HyPDFOption.Footer;
+import jp.co.flect.hypdf.model.HyPDFOption.HtmlToPdf;
+import jp.co.flect.hypdf.model.JobStatus;
+import jp.co.flect.hypdf.model.PdfResponse;
+import jp.co.flect.hypdf.transport.TransportFactory;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.FileInputStream;
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-import java.net.URL;
-
-import jp.co.flect.hypdf.transport.Transport;
-import jp.co.flect.hypdf.transport.TransportFactory;
-import jp.co.flect.hypdf.transport.HttpClientTransport;
-import jp.co.flect.hypdf.model.HyPDFOption;
-import jp.co.flect.hypdf.model.HyPDFOption.*;
-import jp.co.flect.hypdf.model.JobStatus;
-import jp.co.flect.hypdf.model.PdfResponse;
 
 public class HyPDFTest {
 
