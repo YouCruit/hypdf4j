@@ -1,8 +1,11 @@
 package jp.co.flect.hypdf;
 
 import static org.junit.Assert.*;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.FileInputStream;
@@ -27,29 +30,26 @@ public class HyPDFTest {
 	public static File OUTPUT_DIR = new File("target/testoutput");
 	public static File INPUT_DIR  = new File("testinput");
 
-	static {
-		try {
-			Properties props = new Properties();
-			
-			InputStream is = new FileInputStream(new File("test.properties"));
-			try {
-				props.load(is);
-			} finally {
-				is.close();
-			}
-			USERNAME  = props.getProperty("HYPDF_USER");
-			PASSWORD  = props.getProperty("HYPDF_PASSWORD");
-			
-			assertNotNull(USERNAME);
-			assertNotNull(PASSWORD);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		OUTPUT_DIR.mkdirs();
+	@BeforeClass
+	public static void setup() throws IOException{
+	    Properties props = new Properties();
 
-//		System.setProperty ("jsse.enableSNIExtension", "false");
-		TransportFactory.setDefaultFactory(new TransportFactory.HttpClientTransportFactory());
-		TransportFactory.setAlwaysIgnoreHostNameVerification(true);
+	    InputStream is = new FileInputStream(new File("test.properties"));
+	    try {
+		props.load(is);
+	    } finally {
+		is.close();
+	    }
+	    USERNAME  = props.getProperty("HYPDF_USER");
+	    PASSWORD  = props.getProperty("HYPDF_PASSWORD");
+
+	    assertNotNull(USERNAME);
+	    assertNotNull(PASSWORD);
+	    OUTPUT_DIR.mkdirs();
+
+	    //		System.setProperty ("jsse.enableSNIExtension", "false");
+	    TransportFactory.setDefaultFactory(new TransportFactory.HttpClientTransportFactory());
+	    TransportFactory.setAlwaysIgnoreHostNameVerification(true);
 	}
 	
 	private void log(String msg) {
