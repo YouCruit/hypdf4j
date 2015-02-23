@@ -1,15 +1,17 @@
 package jp.co.flect.hypdf;
 
-import static org.junit.Assert.*;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
 import java.util.HashMap;
 import java.util.Map;
-import java.net.URL;
 
-import jp.co.flect.hypdf.model.HyPDFOption;
-import jp.co.flect.hypdf.model.HyPDFOption.*;
+import jp.co.flect.hypdf.model.HyPDFOption.Footer;
+import jp.co.flect.hypdf.model.HyPDFOption.HtmlToPdf;
+import jp.co.flect.hypdf.model.HyPDFOption.Orientation;
+import jp.co.flect.hypdf.model.HyPDFOption.S3Setting;
 import jp.co.flect.hypdf.model.LengthUnit;
+
+import org.junit.Test;
 
 public class HtmlToPdfOptionTest {
 
