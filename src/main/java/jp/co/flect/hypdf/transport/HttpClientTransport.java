@@ -171,7 +171,6 @@ public class HttpClientTransport extends AbstractTransport {
 			if (this.ignoreSSL) {
 				try {
 					TrustStrategy trustStrategy = new TrustStrategy() {
-						@Override
 						public boolean isTrusted(X509Certificate[] chain, String authType)
 								throws CertificateException {
 							return true;
