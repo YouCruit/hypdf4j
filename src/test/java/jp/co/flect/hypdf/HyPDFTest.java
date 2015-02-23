@@ -32,7 +32,7 @@ public class HyPDFTest {
 	public static void setup() throws IOException{
 	    Properties props = new Properties();
 
-	    InputStream is = new FileInputStream(new File("test.properties"));
+	    InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.properties");
 	    try {
 		props.load(is);
 	    } finally {
