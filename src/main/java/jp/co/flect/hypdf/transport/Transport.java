@@ -1,9 +1,9 @@
 package jp.co.flect.hypdf.transport;
 
 import java.io.File;
-import java.io.InputStream;
 import java.io.IOException;
 import java.util.Map;
+
 import jp.co.flect.hypdf.model.PdfResponse;
 
 public interface Transport {

@@ -1,9 +1,5 @@
 package jp.co.flect.hypdf.transport;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Map;
 
 public abstract class AbstractTransport implements Transport {
 
